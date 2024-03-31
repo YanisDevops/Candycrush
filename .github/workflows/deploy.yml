@@ -49,10 +49,7 @@ jobs:
 
       - name: Image scan
         run: trivy image yanishub1/candycrush:latest > trivyimagedeploy.txt  
-      # - name: Stop container 
-      #   run: docker stop candy
-      # - name: Delete container 
-      #   run: docker rm candy
+
       - name: Deploy to candy
         run: docker run -d --name candy -p 3000:3000 yanishub1/candycrush:latest
 
